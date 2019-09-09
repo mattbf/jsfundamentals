@@ -72,8 +72,21 @@ function tenSortedIntegers() {
 }
 
 //Question #4
+//Combines two arrays by alternatively taking elements. The two
+// arrays can have different lengths.
 function combineArrays( arrA, arrB ) {
+  var realLength = arrA.length > arrB.length ? arrA.length : arrB.length
+  var combArray = []
 
+  for (i=0; i<realLength; i++) {
+    if (arrA[i]) {
+      combArray.push(arrA[i])
+    }
+    if (arrB[i]) {
+      combArray.push(arrB[i])
+    }
+  }
+  return combArray
 }
 
 //Question #5
