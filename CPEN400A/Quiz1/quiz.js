@@ -6,15 +6,22 @@
 
 
 //Question #1
+
 // Returns the integer position of a search string in an
 // array of strings if found. If the string is not found, the function returns -1. The string matches are
 // case insensitive.
 function caseInsensitiveStringSearch( strArr, str ) {
   // Receieve an array of strings and a search term
   // return the array position of the search term or -1 if not found
-  for
+
+  //convert strArr to lowercase
+  let lowerCaseArr = []
+  for (i=0; i<strArr.length; i++) {
+    lowerCaseArr.push(strArr[i].toLowerCase())
+  }
   const searchTerm = str.toLowerCase()
-  var position = strArr.indexOf(searchTerm)
+
+  var position = lowerCaseArr.indexOf(searchTerm)
   return position
 
 }
