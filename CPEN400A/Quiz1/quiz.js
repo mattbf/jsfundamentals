@@ -37,18 +37,24 @@ function lowerCaseEmails( userEmails ) {
   //return error message if no email
   //return array
   // Input = [{userId: 1, email: “user1@gmail.com”}, {userId: 2, email: “User2@gmail.com”}]
+  let newObject = []
   if (userEmails && userEmails.length > 0) {
-   console.log('myArray is not empty.');
+    for (i=0; i<userEmails.length; i++) {
+      if (userEmails[i].email) {
+        var lcEmail = userEmails[i].email.toLowerCase()
+        newObject.push({userId: userEmails[i].userId, email: lcEmail })
+      } else {
+        newObject = ['email is blank']
+         return newObject
+      }
+
+    }
+    return newObject
   } else{
-     console.log('myArray is empty.');
+    newObject = ['email is blank']
+     return newObject
   }
-  // for (i=0; i<userEmails.length; i++) {
-  //   if (userEmails[i].email !== null || undefined) {
-  //     var lcaseEmail = userEmails[i].email.toLowerCase()
-  //   } else {
-  //     return "No email provided in user Object"
-  //   }
-  // }
+
 
 }
 
@@ -91,5 +97,15 @@ function combineArrays( arrA, arrB ) {
 
 //Question #5
 function concatAllStringSubsets ( str ) {
+  //receive string and split all characters into array
+  // order in alphabetical order
+  // starting with 'a' get the index of it in the first array and then add each subsequent letter
+  //concatonate all
+
+  let indexArray = [...str]
+
+  return indexArray
+
+
 
 }
