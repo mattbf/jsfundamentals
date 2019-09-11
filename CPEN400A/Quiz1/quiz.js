@@ -102,91 +102,34 @@ function concatAllStringSubsets ( str ) {
   // starting with the first char in lexoArray go down the first array and push each combination of the letter that come after
   //concatonate to a string
   // }
-      const strArray = str.split('')
-      let lexoArray = str.split('').sort((a, b) => a.localeCompare(b))
-      var position = strArray.indexOf('f')
-      let newArray = [lexoArray[0]]
+  if (str != "" || " ") {
+    const strArray = str.split('')
+    let lexoArray = str.split('').sort((a, b) => a.localeCompare(b))
+    let newArray = []
+    console.log("input: " + strArray + ' length: ' + strArray.length)
+    for (i=0; i<strArray.length; i++) {
+        let afterString = [lexoArray[i]]
+        let charPos = strArray.indexOf(lexoArray[i])
+        let toGo = strArray.length - (charPos + 1)
+        console.log("i: " + i + " letter: " + lexoArray[i] + ' pos: ' + charPos + " chars to go: " + toGo)
+        var j = 0
+        do {
+          let afterStr = strArray.slice(charPos, charPos+(j+1)).join('')
+          console.log(afterStr)
+          newArray.push(afterStr)
+          j++
+        }
+        while (j<(toGo+1))
 
-      for (i=0; i<strArray.length; i++) {
-          let firstLetter = lexoArray[i]
-          let afterString = strArray.slice(i + 1).join('')
-          newArray.push(firstLetter + afterString)
-      }
+    }
+    //console.log('Final Array: ' + newArray)
+    let finalStr = newArray.join('')
+    console.log('answer ' + finalStr)
+    return finalStr
+  } else {
+    return ""
+  }
 
-      let finalStr = newArray.join('')
-
-      return finalStr
-
-      //V2
-//       if (str != "" || " ") {
-// const strArray = str.split('')
-// //console.log(strArray)
-// let lexoArray = str.split('').sort((a, b) => a.localeCompare(b))
-// //console.log(lexoArray)
-// //console.log(strArray)
-//
-// var position = strArray.indexOf('f')
-// //console.log(position)
-// let newArray = [lexoArray[0]]
-// //console.log(newArray)
-// for (i=0; i<strArray.length; i++) {
-//     let firstLetter = lexoArray[i]
-//     let afterString = strArray.slice(i + 1).join('')
-//     console.log("i: " + i + " letter: " + firstLetter)
-//     //console.log("afterstring: " + afterString)
-//     if (afterString == null || "" || undefined || " ") {
-//         i++
-//     } else {
-//         newArray.push(firstLetter + afterString)
-//     }
-//
-// }
-// //console.log(newArray)
-// let finalStr = newArray.join('')
-// console.log('answer ' + finalStr)
-// } else return ""
-
-// v3
-
-// let str = 'gaf'
-//     if (str != "" || " ") {
-//     const strArray = str.split('')
-//     //console.log(strArray)
-//     let lexoArray = str.split('').sort((a, b) => a.localeCompare(b))
-//     //console.log(lexoArray)
-//     //console.log(strArray)
-//
-//     var position = strArray.indexOf('f')
-//     //console.log(position)
-//     let newArray = [lexoArray[0]]
-//     //console.log(newArray)
-//     for (i=0; i<strArray.length; i++) {
-//         let firstLetter = lexoArray[i]
-//         let afterString = []//strArray.slice(i + 1).join('')
-//         let charPos = strArray.indexOf(lexoArray[i])
-//         let toGo = strArray.length - (charPos + 1)
-//         //console.log(strArray.slice(i + 1))
-//         for (j=0; j<toGo; j++) {
-//             afterString.push(strArray.slice(j, j+1).join(''))
-//             if (toGo - j != 0) {
-//                 afterString.push(strArray.slice(j, j+1).join(''))
-//                 j++
-//             }
-//             console.log('afterString: ' + afterString)
-//         }
-//
-//
-//         console.log("i: " + i + " letter: " + firstLetter + ' pos: ' + charPos + " chars to go: " + toGo)
-//         //console.log("afterstring: " + afterString)
-//         if (afterString == null || "" || undefined || " ") {
-//             i++ //push this letter once??
-//         } else {
-//             newArray.push(firstLetter + afterString)
-//         }
-//
-//     }
-//     //console.log(newArray)
-//     let finalStr = newArray.join('')
-//     //console.log('answer ' + finalStr)
+  //does not handle duplicates :(
 
 }
