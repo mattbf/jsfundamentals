@@ -98,11 +98,9 @@ function combineArrays( arrA, arrB ) {
 //Question #5
 function concatAllStringSubsets ( str ) {
   //receive string and split all characters into array
-  // order in alphabetical order
-  // starting with 'a' get the index of it in the first array and then add each subsequent letter
-  //concatonate all
-  // function lexicoGraphical(a, b) {
-  //   return a
+  // order in lexicoGraphical order
+  // starting with the first char in lexoArray go down the first array and push each combination of the letter that come after
+  //concatonate to a string
   // }
       const strArray = str.split('')
       let lexoArray = str.split('').sort((a, b) => a.localeCompare(b))
@@ -118,5 +116,77 @@ function concatAllStringSubsets ( str ) {
       let finalStr = newArray.join('')
 
       return finalStr
+
+      //V2
+//       if (str != "" || " ") {
+// const strArray = str.split('')
+// //console.log(strArray)
+// let lexoArray = str.split('').sort((a, b) => a.localeCompare(b))
+// //console.log(lexoArray)
+// //console.log(strArray)
+//
+// var position = strArray.indexOf('f')
+// //console.log(position)
+// let newArray = [lexoArray[0]]
+// //console.log(newArray)
+// for (i=0; i<strArray.length; i++) {
+//     let firstLetter = lexoArray[i]
+//     let afterString = strArray.slice(i + 1).join('')
+//     console.log("i: " + i + " letter: " + firstLetter)
+//     //console.log("afterstring: " + afterString)
+//     if (afterString == null || "" || undefined || " ") {
+//         i++
+//     } else {
+//         newArray.push(firstLetter + afterString)
+//     }
+//
+// }
+// //console.log(newArray)
+// let finalStr = newArray.join('')
+// console.log('answer ' + finalStr)
+// } else return ""
+
+// v3
+
+// let str = 'gaf'
+//     if (str != "" || " ") {
+//     const strArray = str.split('')
+//     //console.log(strArray)
+//     let lexoArray = str.split('').sort((a, b) => a.localeCompare(b))
+//     //console.log(lexoArray)
+//     //console.log(strArray)
+//
+//     var position = strArray.indexOf('f')
+//     //console.log(position)
+//     let newArray = [lexoArray[0]]
+//     //console.log(newArray)
+//     for (i=0; i<strArray.length; i++) {
+//         let firstLetter = lexoArray[i]
+//         let afterString = []//strArray.slice(i + 1).join('')
+//         let charPos = strArray.indexOf(lexoArray[i])
+//         let toGo = strArray.length - (charPos + 1)
+//         //console.log(strArray.slice(i + 1))
+//         for (j=0; j<toGo; j++) {
+//             afterString.push(strArray.slice(j, j+1).join(''))
+//             if (toGo - j != 0) {
+//                 afterString.push(strArray.slice(j, j+1).join(''))
+//                 j++
+//             }
+//             console.log('afterString: ' + afterString)
+//         }
+//
+//
+//         console.log("i: " + i + " letter: " + firstLetter + ' pos: ' + charPos + " chars to go: " + toGo)
+//         //console.log("afterstring: " + afterString)
+//         if (afterString == null || "" || undefined || " ") {
+//             i++ //push this letter once??
+//         } else {
+//             newArray.push(firstLetter + afterString)
+//         }
+//
+//     }
+//     //console.log(newArray)
+//     let finalStr = newArray.join('')
+//     //console.log('answer ' + finalStr)
 
 }
