@@ -105,23 +105,30 @@ function concatAllStringSubsets ( str ) {
   //   return a
   // }
 
-  let str = 'efa'
-   const strArray = str.split('')
-   console.log(strArray)
-   let lexoArray = str.split('').sort((a, b) => a.localeCompare(b))
-   console.log(lexoArray)
-   console.log(strArray)
+  (function main() {
+      let str = 'ef'
+      const strArray = str.split('')
+      //console.log(strArray)
+      let lexoArray = str.split('').sort((a, b) => a.localeCompare(b))
+      //console.log(lexoArray)
+      //console.log(strArray)
 
-   var position = strArray.indexOf('f')
-   console.log(position)
-   let newArray = [lexoArray[0]]
-   console.log(newArray)
-   for (i=0; i<strArray.length; i++) {
-       let firstLetter = lexoArray[i]
-       let afterString = strArray[i + 1]
-       newArray.push(firstLetter + afterString)
-   }
-   console.log(newArray)
+      var position = strArray.indexOf('f')
+      //console.log(position)
+      let newArray = [lexoArray[0]]
+      //console.log(newArray)
+      for (i=0; i<strArray.length; i++) {
+          let firstLetter = lexoArray[i]
+          let afterString = strArray.slice(i + 1).join('')
+          console.log("i: " + i + " letter: " + firstLetter)
+          console.log(afterString)
+          newArray.push(firstLetter + afterString)
+      }
+      //console.log(newArray)
+      let finalStr = newArray.join('')
+      console.log(finalStr)
+
+  }());
 
 
 
