@@ -101,10 +101,29 @@ function concatAllStringSubsets ( str ) {
   // order in alphabetical order
   // starting with 'a' get the index of it in the first array and then add each subsequent letter
   //concatonate all
+  // function lexicoGraphical(a, b) {
+  //   return a
+  // }
 
-  let indexArray = [...str]
+  let str = 'efa'
+   const strArray = str.split('')
+   console.log(strArray)
+   let lexoArray = str.split('').sort((a, b) => a.localeCompare(b))
+   console.log(lexoArray)
+   console.log(strArray)
 
-  return indexArray
+   var position = strArray.indexOf('f')
+   console.log(position)
+   let newArray = [lexoArray[0]]
+   console.log(newArray)
+   for (i=0; i<strArray.length; i++) {
+       let firstLetter = lexoArray[i]
+       let afterString = strArray[i + 1]
+       newArray.push(firstLetter + afterString)
+   }
+   console.log(newArray)
+
+
 
 
 
