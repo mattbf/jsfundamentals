@@ -72,6 +72,10 @@ function tenSortedIntegers() {
   return a > b ? -1 : b > a ? 1 : 0;
  }
 
+ function ascendingOrder(a, b) {
+  return a > b ? 1 : b > a ? -1 : 0;
+ }
+
   intArray.sort(descendingOrder)
   return intArray
 
