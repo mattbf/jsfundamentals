@@ -2,7 +2,7 @@
 //------ FILTER --------
 //const studentsAge = [17, 16, 18, 19, 21, 17];
 function ableToDrink(arr) {
-  return arr.filter(ag => age > 18)
+  return arr.filter(age => age > 18)
 }
 // will be equal to [19, 21]
 

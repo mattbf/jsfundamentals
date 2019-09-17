@@ -34,4 +34,4 @@ newLength;
 //remove last item
 myArray.pop();
 
-//unshift() and shift()  are the exact same except on the beginnign of array
+//unshift() adds to front and shift() rmeoves  
